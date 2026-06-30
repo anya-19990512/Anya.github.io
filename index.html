@@ -88,7 +88,7 @@
     h1, h2, h3, p { margin: 0; }
 
     h1 {
-      font-size: clamp(48px, 7.6vw, 104px);
+      font-size: clamp(36px, 6vw, 80px);
       line-height: .98;
       font-weight: 850;
       max-width: 12ch;
@@ -101,7 +101,7 @@
     }
 
     h2 {
-      font-size: clamp(34px, 4.8vw, 68px);
+      font-size: clamp(26px, 4vw, 48px);
       line-height: 1.02;
       font-weight: 820;
       max-width: 13ch;
@@ -109,7 +109,7 @@
     }
 
     h2.split-title {
-      font-size: clamp(30px, 4.8vw, 60px);
+      font-size: clamp(24px, 4vw, 48px);
       max-width: none;
       line-height: 1.1;
     }
@@ -120,13 +120,13 @@
     }
 
     h3 {
-      font-size: clamp(18px, 1.7vw, 27px);
+      font-size: clamp(16px, 1.5vw, 22px);
       line-height: 1.16;
       font-weight: 800;
     }
 
     p, li {
-      font-size: clamp(14px, 1.25vw, 20px);
+      font-size: clamp(13px, 1.1vw, 18px);
       line-height: 1.62;
       color: var(--muted);
       font-weight: 540;
@@ -183,7 +183,7 @@
     }
 
     .lead {
-      font-size: clamp(18px, 1.8vw, 28px);
+      font-size: clamp(16px, 1.6vw, 22px);
       line-height: 1.6;
       color: #263241;
       font-weight: 650;
@@ -260,9 +260,9 @@
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1.25rem;
-      min-height: 190px;
-      box-shadow: 0 18px 42px rgba(15,23,42,.08);
+      padding: .9rem;
+      min-height: 150px;
+      box-shadow: 0 14px 32px rgba(15,23,42,.06);
     }
 
     /* Ensure slide 2 panels are equal-size and aligned */
@@ -270,10 +270,10 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: .5rem;
-      min-height: 210px;
-      height: 210px;
-      padding: 1.25rem;
+      gap: .45rem;
+      min-height: 160px;
+      height: 160px;
+      padding: .9rem;
       box-sizing: border-box;
       overflow: hidden;
       align-items: flex-start;
@@ -281,20 +281,20 @@
 
     /* Target h3 inside those panels to keep visual balance */
     section[data-no="02 / 15"] .grid-2 .panel h3 {
-      font-size: clamp(16px, 1.2vw, 22px);
-      margin: 0 0 .5rem 0;
+      font-size: clamp(15px, 1.1vw, 20px);
+      margin: 0 0 .45rem 0;
     }
 
     /* Slightly reduce the metric number to avoid visual imbalance */
     section[data-no="02 / 15"] .grid-2 .panel .metric {
-      font-size: clamp(36px, 4.2vw, 64px);
+      font-size: clamp(28px, 3.8vw, 48px);
       line-height: 0.95;
     }
 
     /* Fix internal alignment so metric, title and paragraph keep order */
     section[data-no="02 / 15"] .grid-2 .panel .metric {
       align-self: flex-start;
-      margin: 0 0 .5rem 0;
+      margin: 0 0 .45rem 0;
       display: block;
     }
 
@@ -322,10 +322,10 @@
     .metric {
       display: block;
       color: var(--maroon);
-      font-size: clamp(42px, 5.2vw, 74px);
+      font-size: clamp(32px, 4.2vw, 56px);
       line-height: .9;
       font-weight: 860;
-      margin-bottom: .75rem;
+      margin-bottom: .6rem;
     }
 
     .unit-list {
