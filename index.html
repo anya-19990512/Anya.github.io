@@ -866,7 +866,12 @@
     const params = new URLSearchParams(window.location.search);
     const requestedSlide = Number(params.get("slide"));
     if (Number.isInteger(requestedSlide) && requestedSlide >= 1 && requestedSlide <= slides.length) {
-      showSlide(requestedSlide - 1);
+      showSlideAndFit(requestedSlide - 1);
+    } else {
+      // ensure initial active slide is fitted
+      document.addEventListener('DOMContentLoaded', () => showSlideAndFit(0));
+      // also run immediately in case DOMContentLoaded already fired
+      try { showSlideAndFit(0); } catch (e) {}
     }
 
     if (params.get("audit") === "1") {
