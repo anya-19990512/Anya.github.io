@@ -1,0 +1,1399 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="台北醫學大學跨領域學院對外合作簡報，介紹合作模式、教育願景與推動內容。">
+  <meta property="og:title" content="台北醫學大學跨領域學院對外合作簡報">
+  <meta property="og:description" content="台北醫學大學跨領域學院對外合作簡報，介紹合作模式、教育願景與推動內容。">
+  <meta property="og:type" content="website">
+  <title>台北醫學大學跨領域學院對外合作簡報</title>
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #5b6472;
+      --line: #d9dee7;
+      --paper: #f7f8fa;
+      --white: #ffffff;
+      --maroon: #8b1e2d;
+      --maroon-deep: #5b1220;
+      --teal: #0f766e;
+      --blue: #1e3a8a;
+      --gold: #c49a37;
+      --soft-red: #f6e8eb;
+      --soft-teal: #e5f4f2;
+      --soft-blue: #e8eefb;
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b1020;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .deck {
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
+      max-width: 100vw;
+      max-height: 100vh;
+      aspect-ratio: 16 / 9;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      padding: calc(3vh) calc(3.2vw) calc(4.5vh);
+      background: var(--paper);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .slide.active { display: block; }
+
+    .slide > * { min-width: 0; min-height: 0; }
+    .slide h1, .slide h2, .slide h3, .slide p, .slide li, .slide a { overflow-wrap: anywhere; word-break: break-word; }
+
+    .slide::after {
+      content: attr(data-no);
+      position: absolute;
+      right: 3.2vw;
+      bottom: 3vh;
+      color: #8b94a3;
+      font-size: clamp(16px, 1vw, 16px);
+      font-weight: 700;
+    }
+
+    .brand-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 9px;
+      background: linear-gradient(90deg, var(--maroon), var(--teal), var(--blue));
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 80px);
+      line-height: .98;
+      font-weight: 850;
+      max-width: 12ch;
+      letter-spacing: 0;
+    }
+
+    h1 span { display: block; white-space: nowrap; }
+
+    h2 {
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.02;
+      font-weight: 820;
+      max-width: 13ch;
+      letter-spacing: 0;
+    }
+
+    .single-line-title { white-space: nowrap; max-width: none; }
+
+    h2.split-title {
+      font-size: clamp(24px, 4vw, 48px);
+      max-width: none;
+      line-height: 1.1;
+    }
+
+    h2.split-title span { display: block; white-space: nowrap; }
+
+    h3 {
+      font-size: clamp(18px, 1.5vw, 24px);
+      line-height: 1.16;
+      font-weight: 800;
+    }
+
+    p, li {
+      font-size: clamp(16px, 1.1vw, 18px);
+      line-height: 1.62;
+      color: var(--muted);
+      font-weight: 540;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--maroon);
+      font-size: clamp(16px, 1vw, 18px);
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .kicker {
+      display: inline-flex;
+      gap: .55rem;
+      align-items: center;
+      margin-top: 1.4rem;
+      padding: .55rem .75rem;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--maroon-deep);
+      font-weight: 780;
+      font-size: clamp(16px, 1.15vw, 18px);
+    }
+
+    .slide > .grid-2 {
+      height: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 5%;
+      align-items: start;
+    }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: .85rem; }
+
+    .lead {
+      font-size: clamp(18px, 1.6vw, 22px);
+      line-height: 1.6;
+      color: #263241;
+      font-weight: 650;
+      max-width: 52ch;
+    }
+
+    .no-break {
+      white-space: nowrap;
+      word-break: keep-all;
+      max-width: none;
+    }
+
+    .tight-lead {
+      font-size: clamp(18px, 1.9vw, 26px);
+      line-height: 1.58;
+      max-width: 58ch;
+    }
+
+    .strong-copy {
+      font-size: clamp(16px, 1.35vw, 20px);
+      line-height: 1.6;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      padding: .48rem .72rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--maroon-deep);
+      font-size: clamp(16px, .95vw, 18px);
+      font-weight: 740;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .9rem;
+      margin-top: 1rem;
+    }
+
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px 8px 18px 8px;
+      padding: .92rem 1rem;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+    }
+
+    .info-card h4 {
+      margin: 0 0 .42rem 0;
+      color: var(--maroon-deep);
+      font-size: clamp(18px, 1.3vw, 20px);
+    }
+
+    .info-card p {
+      font-size: clamp(16px, 1.08vw, 18px);
+      line-height: 1.58;
+    }
+
+    .org-chart {
+      margin-top: .6rem;
+    }
+
+    .org-art {
+      margin-top: .55rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .org-art img {
+      width: min(100%, 1100px);
+      max-height: 49vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    section[data-no="03 / 11"] .grid-2 {
+      gap: 3.2%;
+      align-items: start;
+    }
+
+    section[data-no="03 / 11"] .lead {
+      font-size: clamp(16px, 1.1vw, 18px);
+      line-height: 1.38;
+    }
+
+    section[data-no="03 / 11"] .kicker {
+      margin-top: .8rem;
+      padding: .42rem .65rem;
+    }
+
+    section[data-no="03 / 11"] .info-grid {
+      margin-top: .75rem;
+      gap: .55rem;
+    }
+
+    section[data-no="03 / 11"] .info-card {
+      padding: .6rem .7rem;
+    }
+
+    section[data-no="03 / 11"] .info-card p {
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .org-top {
+      width: min(68%, 660px);
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(180deg, #fff 0%, #fbf7f8 100%);
+      border: 2px solid #d8c1c7;
+      border-radius: 20px 8px 20px 8px;
+      padding: .55rem .8rem;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+      position: relative;
+    }
+
+    .org-top::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -18px;
+      width: 2px;
+      height: 18px;
+      background: #c9cfd8;
+      transform: translateX(-50%);
+    }
+
+    .org-top h3 {
+      color: var(--maroon-deep);
+      font-size: clamp(18px, 1.5vw, 20px);
+      margin-bottom: .2rem;
+    }
+
+    .org-top p {
+      font-size: 16px;
+      color: var(--muted);
+    }
+
+    .org-row {
+      margin-top: .65rem;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: .25rem;
+      position: relative;
+      align-items: stretch;
+    }
+
+    .org-row::before {
+      content: "";
+      position: absolute;
+      top: -14px;
+      left: 12%;
+      right: 12%;
+      border-top: 2px solid #c9cfd8;
+    }
+
+    .org-row::after {
+      content: "";
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      width: 2px;
+      height: 14px;
+      background: #c9cfd8;
+      transform: translateX(-50%);
+    }
+
+    .org-card {
+      background: rgba(255,255,255,.96);
+      border: 1px solid var(--line);
+      border-radius: 18px 8px 18px 8px;
+      padding: .35rem .45rem .4rem;
+      text-align: center;
+      box-shadow: 0 10px 24px rgba(15,23,42,.05);
+    }
+
+    .org-card b {
+      display: block;
+      color: var(--maroon);
+      font-size: 16px;
+      line-height: 1.15;
+      margin-bottom: .2rem;
+    }
+
+    .org-card p {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .learning-panel {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+
+    .case-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px 8px 18px 8px;
+      padding: .85rem .95rem;
+    }
+
+    .case-card h4 {
+      margin: 0 0 .35rem 0;
+      color: var(--maroon-deep);
+      font-size: clamp(18px, 1.2vw, 20px);
+    }
+
+    .case-card p {
+      font-size: clamp(16px, 1vw, 18px);
+      line-height: 1.5;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .55rem;
+      margin-top: .8rem;
+    }
+
+    .team-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px 8px 18px 8px;
+      padding: .6rem .7rem;
+      box-shadow: 0 8px 18px rgba(15,23,42,.05);
+    }
+
+    .team-card b {
+      display: block;
+      color: var(--maroon);
+      margin-bottom: .25rem;
+      font-size: clamp(18px, 1.2vw, 20px);
+    }
+
+    .team-card p {
+      font-size: clamp(16px, 1vw, 18px);
+      line-height: 1.35;
+    }
+
+    .challenge-solution {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .big-photo {
+      width: 100%;
+      max-height: 39vh;
+      object-fit: cover;
+      border-radius: 18px 8px 18px 8px;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 24px rgba(15,23,42,.08);
+      display: block;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .85rem;
+    }
+
+    section[data-no="08 / 11"] .feature-card {
+      min-height: 150px;
+      padding: .75rem .8rem;
+    }
+
+    section[data-no="08 / 11"] .feature-card h3 {
+      font-size: clamp(18px, 1.3vw, 20px);
+    }
+
+    section[data-no="08 / 11"] .feature-card p {
+      font-size: clamp(16px, .98vw, 17px);
+    }
+
+    section[data-no="09 / 11"] .case-grid {
+      gap: .6rem;
+      margin-top: .75rem;
+    }
+
+    section[data-no="09 / 11"] .case-card {
+      padding: .65rem .75rem;
+    }
+
+    section[data-no="09 / 11"] .summary-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .55rem;
+      margin-top: .55rem;
+    }
+
+    section[data-no="09 / 11"] .feature-card {
+      min-height: 140px;
+      padding: .7rem .8rem .75rem;
+    }
+
+    section[data-no="09 / 11"] .feature-card h3 {
+      font-size: clamp(18px, 1.3vw, 20px);
+    }
+
+    section[data-no="09 / 11"] .feature-card p {
+      font-size: clamp(16px, .98vw, 17px);
+    }
+
+    section[data-no="10 / 11"] .summary-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .65rem;
+      margin-top: .75rem;
+    }
+
+    section[data-no="10 / 11"] .feature-card {
+      min-height: 150px;
+      padding: .75rem .8rem;
+    }
+
+    section[data-no="10 / 11"] .feature-card h3 {
+      font-size: clamp(18px, 1.3vw, 20px);
+    }
+
+    section[data-no="10 / 11"] .feature-card p {
+      font-size: clamp(16px, .98vw, 17px);
+    }
+
+    .capability-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: .75rem;
+    }
+
+    .capability-card {
+      min-height: 250px;
+      padding: .95rem;
+      background: linear-gradient(180deg, #fff 0%, #fbfbfd 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px 8px 22px 8px;
+      box-shadow: 0 10px 24px rgba(15,23,42,.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .capability-card b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 16px 6px 16px 6px;
+      background: var(--maroon);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: .75rem;
+    }
+
+    .capability-card h3 {
+      color: var(--maroon-deep);
+      margin-bottom: .45rem;
+      font-size: clamp(16px, 1.5vw, 21px);
+    }
+
+    .capability-card p {
+      font-size: clamp(16px, 1vw, 18px);
+      line-height: 1.55;
+    }
+
+    .capability-icon {
+      margin-top: auto;
+      display: grid;
+      place-items: center;
+      min-height: 78px;
+      padding-top: .7rem;
+    }
+
+    .capability-icon svg {
+      width: 76px;
+      height: 76px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+      margin-top: 1rem;
+    }
+
+    .feature-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px 8px 20px 8px;
+      padding: .95rem 1rem 1rem;
+      box-shadow: 0 12px 24px rgba(15,23,42,.06);
+      min-height: 190px;
+    }
+
+    .feature-card .tag {
+      display: inline-block;
+      padding: .28rem .55rem;
+      border-radius: 999px;
+      background: var(--soft-red);
+      color: var(--maroon-deep);
+      font-size: clamp(16px, .9vw, 18px);
+      font-weight: 760;
+      margin-bottom: .65rem;
+    }
+
+    .feature-card h3 {
+      color: var(--maroon-deep);
+      margin-bottom: .45rem;
+      font-size: clamp(18px, 1.5vw, 22px);
+    }
+
+    .feature-card p {
+      font-size: clamp(16px, 1vw, 18px);
+      line-height: 1.56;
+    }
+
+    .resource-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: .95rem;
+    }
+
+    .resource-strip .pill {
+      background: var(--soft-teal);
+      border-color: #c2e2dd;
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .9rem;
+      margin-top: 1rem;
+    }
+
+    .article-card {
+      min-height: 240px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px 8px 20px 8px;
+      box-shadow: 0 12px 24px rgba(15,23,42,.06);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .article-card .date {
+      color: var(--maroon);
+      font-size: clamp(16px, .92vw, 18px);
+      font-weight: 780;
+      letter-spacing: .04em;
+    }
+
+    .article-card h3 {
+      color: var(--maroon-deep);
+      font-size: clamp(18px, 1.55vw, 22px);
+      line-height: 1.15;
+    }
+
+    .article-card p {
+      font-size: clamp(16px, 1.02vw, 18px);
+      line-height: 1.56;
+    }
+
+    .article-card .thumb {
+      margin-top: auto;
+      height: 86px;
+      border-radius: 16px 6px 16px 6px;
+      background:
+        linear-gradient(135deg, rgba(139,30,45,.12), rgba(15,118,110,.12)),
+        linear-gradient(90deg, #f8fafc, #eef2f7);
+      display: grid;
+      place-items: center;
+      color: var(--maroon-deep);
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .two-col-stack {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, .95fr);
+      gap: 1rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .final-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .final-link {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 18px 8px 18px 8px;
+      padding: .9rem 1rem;
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .final-link h3 {
+      font-size: clamp(18px, 1.4vw, 20px);
+      margin-bottom: .35rem;
+    }
+
+    .final-link p {
+      color: rgba(255,255,255,.9);
+      font-size: clamp(16px, 1vw, 18px);
+      line-height: 1.5;
+    }
+
+    .final-contact {
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(255,255,255,.6);
+      color: var(--ink);
+      border-radius: 18px 8px 18px 8px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 16px 32px rgba(0,0,0,.12);
+    }
+
+    .final-contact h3 {
+      color: var(--maroon-deep);
+      font-size: clamp(20px, 1.75vw, 24px);
+      margin-bottom: .45rem;
+    }
+
+    .final-contact p {
+      font-size: clamp(16px, 1.05vw, 18px);
+      line-height: 1.56;
+    }
+
+    section[data-no="11 / 11"] {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(16,24,39,.86), rgba(16,24,39,.55)),
+        url("images/學院.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    section[data-no="11 / 11"] .eyebrow,
+    section[data-no="11 / 11"] .lead,
+    section[data-no="11 / 11"] h2,
+    section[data-no="11 / 11"]::after {
+      color: #fff;
+    }
+
+    section[data-no="11 / 11"] .divider {
+      background: #f3d9dc;
+    }
+
+    section[data-no="11 / 11"] .kicker {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      border-color: rgba(255,255,255,.3);
+    }
+
+    .cover {
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(16,24,39,.92), rgba(16,24,39,.62)),
+        url("images/campus.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .cover h1, .cover p, .cover .eyebrow { color: var(--white); }
+
+    .cover h1 {
+      max-width: 9ch;
+      font-size: clamp(56px, 7.2vw, 98px);
+      line-height: 1.04;
+    }
+
+    .cover-subtitle {
+      margin-top: 1rem;
+      color: rgba(255,255,255,.92);
+      font-size: clamp(22px, 2.15vw, 34px);
+      line-height: 1.24;
+      font-weight: 760;
+      max-width: 52ch;
+    }
+
+    .cover .logo {
+      position: absolute;
+      right: 5.2%;
+      top: 5.4%;
+      width: min(20vw, 220px);
+      padding: .25rem;
+      background: rgba(255,255,255,.94);
+      border-radius: var(--radius);
+    }
+
+    .cover .logo img { width: 100%; display: block; height: auto; }
+
+    .cover-copy {
+      position: absolute;
+      left: 5.2%;
+      bottom: 9%;
+      width: min(900px, 72%);
+    }
+
+    .cover-copy .lead { color: rgba(255,255,255,.84); margin-top: 1.35rem; }
+
+    .divider {
+      width: 84px;
+      height: 5px;
+      background: var(--maroon);
+      margin: 1.2rem 0;
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: .9rem;
+      min-height: 150px;
+      box-shadow: 0 14px 32px rgba(15,23,42,.06);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .panel.red { background: var(--soft-red); border-color: #eac7ce; }
+    .panel.teal { background: var(--soft-teal); border-color: #bfe2dd; }
+    .panel.blue { background: var(--soft-blue); border-color: #c7d5f4; }
+
+    /* slide-4 image and panel styling */
+    section[data-no="04 / 11"] .slide-illustration {
+      position: absolute;
+      left: 4.5%;
+      bottom: 6%;
+      width: min(41vw, 450px);
+      pointer-events: none;
+      opacity: 0.98;
+      z-index: 0;
+    }
+
+    section[data-no="04 / 11"] .slide-illustration img { width: 100%; height: auto; display: block; }
+
+    section[data-no="04 / 11"] .grid-2 { align-items: stretch; }
+    section[data-no="04 / 11"] .grid-2 > .panel { height: 100%; display: flex; flex-direction: column; justify-content: flex-start; z-index: 2; padding: 18px; background: var(--white); border-radius: 8px; box-shadow: 0 6px 20px rgba(16,24,40,0.06); }
+    section[data-no="04 / 11"] .grid-2 > .panel h3 { font-size: clamp(18px,2.2vw,22px); margin: 0 0 .5rem 0; color: var(--maroon-deep); }
+    section[data-no="04 / 11"] .grid-2 > .panel h4 { font-size: clamp(16px,1.35vw,18px); margin: .6rem 0 .2rem 0; color: var(--maroon); }
+    section[data-no="04 / 11"] .grid-2 > .panel p,
+    section[data-no="04 / 11"] .grid-2 > .panel li { font-size: clamp(16px, 1.2vw, 18px); line-height: 1.58; color: var(--muted); }
+    section[data-no="04 / 11"] .grid-2 > .panel .lead { margin-bottom: .6rem; color: var(--muted); }
+    section[data-no="04 / 11"] .grid-2 > .panel .bullet-list { margin: .4rem 0 0 1.1rem; color: var(--muted); }
+    section[data-no="04 / 11"] .grid-2 > .panel .bullet-list li { margin-bottom: .4rem; }
+
+    /* slide-5 chart area */
+    .chart-block { margin-top: 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
+    .chart-svg { flex: 1 1 60%; min-width: 260px; background: linear-gradient(180deg, #fff 0%, #fbfcff 100%); padding: 12px; border-radius: 10px; border: 1px solid var(--line); box-shadow: 0 8px 18px rgba(15,23,42,0.04); }
+    .chart-svg svg { width: 100%; height: auto; display: block; }
+    .chart-line { fill: none; stroke: var(--maroon); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .chart-point { fill: var(--white); stroke: var(--maroon-deep); stroke-width: 2; }
+    .chart-legend { flex: 1 1 40%; list-style: none; margin: 0; padding: 0; color: var(--muted); }
+    .chart-legend li { display: flex; gap: .6rem; align-items: flex-start; margin-bottom: .8rem; }
+    .chart-legend b { display: inline-block; min-width: 36px; height: 36px; line-height: 36px; background: var(--maroon); color: #fff; border-radius: 8px; text-align: center; font-weight: 800; }
+    .chart-legend .meta { font-size: clamp(16px, 1.05vw, 18px); }
+
+    .metric {
+      display: block;
+      color: var(--maroon);
+      font-size: clamp(32px, 4.2vw, 56px);
+      line-height: .9;
+      font-weight: 860;
+      margin-bottom: .6rem;
+    }
+
+    .controls {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 30;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: min(92vw, 760px);
+    }
+
+    .controls button {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 50%;
+      background: rgba(15,23,42,.78);
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .counter {
+      min-width: 88px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 999px;
+      background: rgba(15,23,42,.78);
+      color: white;
+      font-weight: 760;
+      backdrop-filter: blur(8px);
+      padding: 0 10px;
+    }
+
+    @media (max-width: 760px) {
+      body { overflow: auto; place-items: start center; background: var(--paper); }
+      .deck { width: 100vw; height: auto; min-height: 100vh; box-shadow: none; }
+      .slide { position: relative; min-height: 100vh; padding: 70px 24px 110px; }
+      .slide > .grid-2 { grid-template-columns: 1fr; }
+      .cover-copy { position: relative; left: auto; bottom: auto; width: 100%; margin-top: 140px; }
+      .cover .logo { left: 24px; right: auto; width: 240px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" aria-label="台北醫學大學跨領域學院對外合作簡報">
+    <section class="slide cover active" data-no="01 / 11">
+      <div class="brand-line"></div>
+      <div class="logo">
+        <img alt="跨領域學院 Logo" src="images/跨領域學院Logo.png">
+      </div>
+      <div class="cover-copy">
+        <div class="eyebrow">Taipei Medical University College of Interdisciplinary Studies</div>
+        <h1><span>臺北醫學大學</span><span>跨領域學院</span></h1>
+        <div class="cover-subtitle">Connecting healthcare challenges with interdisciplinary action.</div>
+        <p class="lead">串連醫療、科技、創新創業、數位學習與社會實踐，成為外部單位合作與學生使用跨域資源的共同入口。</p>
+      </div>
+    </section>
+
+    <section class="slide" data-no="02 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">Context</div>
+          <h2 class="split-title"><span>醫療創新</span><span>不只是醫療端的問題</span></h2>
+          <div class="divider"></div>
+          <p class="lead">AI、資料、永續、高齡照護與社區健康，都需要跨學科與跨場域合作。跨領域學院正好扮演校內資源整合與對外合作的入口。</p>
+          <div class="info-card" style="margin-top:1rem; max-width: 30rem;">
+            <h4>跨領域學院小檔案</h4>
+            <p>成立於 2018 年，是北醫第十一個學院，位於信義校區杏春樓 1F / B1F，整合課程、場域、數位學習與創新資源。</p>
+          </div>
+          <div class="pill-list">
+            <span class="pill">VR LAB</span>
+            <span class="pill">進駐團隊</span>
+            <span class="pill">跨域課程</span>
+            <span class="pill">合作場域</span>
+          </div>
+        </div>
+        <div class="grid-2" style="gap: 1rem;">
+          <div class="panel red"><span class="metric">01</span><h3>真實場域</h3><p>從醫療與健康需求出發，避免創新停留在概念。</p></div>
+          <div class="panel teal"><span class="metric">02</span><h3>多元人才</h3><p>讓不同背景的學生、教師與外部夥伴共同解題。</p></div>
+          <div class="panel blue"><span class="metric">03</span><h3>可用資源</h3><p>課程、空間、VR LAB 與團隊進駐資源。</p></div>
+          <div class="panel"><span class="metric">04</span><h3>合作路徑</h3><p>從活動、課程、專題到長期合作都能承接。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="03 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">One-page Profile</div>
+          <h2 class="single-line-title no-break">單位簡介：跨領域學院</h2>
+          <div class="divider"></div>
+          <p class="lead">本校於 2018 年成立第十一個學院「跨領域學院」，專司發展醫療外知識與技能領域之教學，並以課程、資源與場域支援跨域合作。</p>
+          <div class="kicker">位置：信義校區杏春樓 1F & B1F</div>
+          <div class="info-grid">
+            <div class="info-card">
+              <h4>教育任務</h4>
+              <p>整合跨院系教學資源，發展前瞻趨勢課程，讓學生提早接觸 AI、永續與新媒體等跨域題材。</p>
+            </div>
+            <div class="info-card">
+              <h4>服務對象</h4>
+              <p>提供學生、教師與外部夥伴共創的入口，讓合作能從活動一路延伸到長期方案。</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h3 style="font-size: clamp(20px, 2vw, 28px);">三中心一學程</h3>
+          <p class="strong-copy" style="margin-top:.6rem;">跨領域學習中心、創新創業教育中心、數位自學中心與智慧醫療跨領域學士學位學程，形成完整支援系統。</p>
+          <div class="pill-list" style="margin-top:1rem;">
+            <span class="pill">課程設計</span>
+            <span class="pill">自主學習</span>
+            <span class="pill">創新創業</span>
+            <span class="pill">智慧醫療</span>
+          </div>
+        </div>
+      </div>
+      <div class="org-art" style="margin-top: -30rem !important; display: flex; justify-content: center; width: 100%;">
+  <img src="images/組織架構圖.png" alt="跨領域學院組織架構圖" style="mix-blend-mode: multiply; filter: contrast(1.1); width: 200% !important; max-width: 1000px; height: auto;">
+</div>
+    </section>
+
+    <section class="slide" data-no="04 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">Positioning</div>
+          <h2 class="split-title">
+            <span>我們不是單一課程單位，</span>
+            <span>而是跨域合作平台</span>
+          </h2>
+          <div class="divider"></div>
+          <p class="lead">跨領域學院把校內外資源轉譯成學生能使用、教師能共創、外部單位能合作的學習與實作系統，讓知識、場域與夥伴關係能真正互相接起來。</p>
+          <div class="info-card" style="margin-top:1rem;">
+            <h4>我們看見的合作模式</h4>
+            <p>從醫院需求、產業命題、社區議題到國際交流，跨域團隊都能在這裡被組織起來，形成可持續的合作路徑。</p>
+          </div>
+        </div>
+        <div class="panel" style="font-size: 16rem !important;">
+          <h3>順應世界趨勢</h3>
+          <p class="strong-copy">培養具備跨領域知能與創新思維的未來人才，打破單一學科的侷限。</p>
+          <div class="divider"></div>
+          <h4>核心理念</h4>
+          <p>發展跨域合作、強化實作與創新能力，形成整合性的學習環境。</p>
+          <h4>發展目標</h4>
+          <ul class="bullet-list">
+            <li>整合校內外優質資源，提供前瞻性的學習路徑。</li>
+            <li>拓展學生系統化學習資源，讓每位學生找到屬於自己的學習軌跡。</li>
+            <li>把課程、微學程與實作場域串接成完整的跨域學習生態。</li>
+          </ul>
+        </div>
+        <div class="slide-illustration">
+          <img src="images/跨領域學院4.JPG" alt="跨領域學院4">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="05 / 11">
+      <div class="brand-line"></div>
+      <div class="eyebrow">Core Capabilities</div>
+      <h2 class="single-line-title no-break">我們培養能與外部單位共同解題的人</h2>
+      <div class="capability-grid">
+        <div class="capability-card">
+          <b>01</b>
+          <h3>主動探索</h3>
+          <p>看見問題、界定問題，理解不同利害關係人的需求。</p>
+          <div class="capability-icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="42" cy="42" r="18" fill="none" stroke="#8b1e2d" stroke-width="4"/>
+              <line x1="56" y1="56" x2="75" y2="75" stroke="#0f766e" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="42" cy="42" r="5" fill="#8b1e2d"/>
+            </svg>
+          </div>
+        </div>
+        <div class="capability-card">
+          <b>02</b>
+          <h3>創新實踐</h3>
+          <p>把想法推進為可測試、可溝通、可迭代的解方。</p>
+          <div class="capability-icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <path d="M50 18 L68 50 L50 82 L32 50 Z" fill="none" stroke="#1e3a8a" stroke-width="4"/>
+              <path d="M50 28 L59 50 L50 72 L41 50 Z" fill="rgba(30,58,138,.12)" stroke="#1e3a8a" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+        <div class="capability-card">
+          <b>03</b>
+          <h3>團隊整合</h3>
+          <p>在跨學科團隊中溝通、協作並推動共同成果。</p>
+          <div class="capability-icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="30" cy="40" r="10" fill="#8b1e2d"/>
+              <circle cx="70" cy="40" r="10" fill="#0f766e"/>
+              <circle cx="50" cy="66" r="10" fill="#1e3a8a"/>
+              <path d="M38 44 L62 44 M38 44 L46 60 M62 44 L54 60" stroke="#c49a37" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="capability-card">
+          <b>04</b>
+          <h3>全球適應</h3>
+          <p>理解國際學習資源與全球議題，建立開放視野。</p>
+          <div class="capability-icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle cx="50" cy="50" r="25" fill="none" stroke="#0f766e" stroke-width="4"/>
+              <path d="M25 50 H75 M50 25 V75" stroke="#0f766e" stroke-width="4"/>
+              <path d="M36 33 C46 41, 54 59, 64 67" fill="none" stroke="#1e3a8a" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="capability-card">
+          <b>05</b>
+          <h3>自主學習</h3>
+          <p>以數位工具與長期自學能力，持續更新專業組合。</p>
+          <div class="capability-icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <rect x="22" y="24" width="56" height="46" rx="8" fill="none" stroke="#8b1e2d" stroke-width="4"/>
+              <path d="M32 38 H68 M32 50 H56" stroke="#8b1e2d" stroke-width="4" stroke-linecap="round"/>
+              <path d="M40 70 L50 82 L60 70" fill="none" stroke="#c49a37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="resource-strip">
+        <span class="pill">需求洞察</span>
+        <span class="pill">原型驗證</span>
+        <span class="pill">跨系協作</span>
+        <span class="pill">國際視野</span>
+        <span class="pill">終身學習</span>
+      </div>
+      <div class="case-grid">
+        <div class="case-card">
+          <h4>案例 01｜臨床需求訪談</h4>
+          <p>從病房或門診痛點開始，練習把模糊問題轉譯成可討論的合作題目。</p>
+        </div>
+        <div class="case-card">
+          <h4>案例 02｜跨系小專題</h4>
+          <p>醫療、設計與工程學生共同完成一個小型原型，訓練溝通與整合。</p>
+        </div>
+        <div class="case-card">
+          <h4>案例 03｜國際共學</h4>
+          <p>透過線上課程與海外資源，建立跨文化學習與資料查找能力。</p>
+        </div>
+        <div class="case-card">
+          <h4>案例 04｜自學加值</h4>
+          <p>用數位工具安排學習節奏，讓能力累積成第二專長。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="06 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2" style="gap: 3%;">
+        <div>
+          <div class="eyebrow">Learning Structure</div>
+          <h2 class="single-line-title no-break">跨領域學習中心</h2>
+          <div class="divider"></div>
+          <p class="lead tight-lead">透過課程、教師社群與跨校資源，讓學習具備系統性與可連結性。</p>
+          <div class="info-card" style="margin-top:1rem;">
+            <h4>中心角色</h4>
+            <p>把微學程、跨領域課程與教師共備串成一條完整路徑，讓學生能依需求修習不同組合。</p>
+          </div>
+        </div>
+        <div class="learning-panel">
+          <div class="panel">
+            <h3 style="font-size: clamp(20px, 1.9vw, 28px);">重點內容</h3>
+            <p class="strong-copy" style="margin-top:.6rem;">規劃跨領域課程、微學程、社群與實作場域，讓學生能以不同方式進入合作。</p>
+          </div>
+          <div class="panel" style="padding:.8rem;">
+            <img src="images/微學程架構1142.png" alt="微學程架構1142" style="width:100%; display:block; border-radius:12px;">
+          </div>
+          <div class="summary-grid">
+            <div class="info-card"><h4>微學程</h4><p>讓學生可依主題自由組合課程。</p></div>
+            <div class="info-card"><h4>教師社群</h4><p>串起跨院系共備與課程整合。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="07 / 11">
+      <div class="brand-line"></div>
+      <h2 class="single-line-title no-break">創新創業教育中心</h2>
+      <p class="lead tight-lead" style="margin-top:1rem;">以課程與輔導培育創新能力，銜接校內外新創資源與團隊進駐。</p>
+      <div class="two-col-stack">
+        <div class="feature-grid" style="margin-top:0;">
+          <div class="feature-card">
+            <span class="tag">三創小檔案</span>
+            <h3>教學、輔導與實作並進</h3>
+            <p>透過課程、工作坊與活動，協助學生把創意變成可執行的方案。</p>
+          </div>
+          <div class="feature-card">
+            <span class="tag">三創有資源</span>
+            <h3>申請進駐與設備借用</h3>
+            <p>提供輔導申請、空間與設備借用、校內導師與校外業師媒合。</p>
+          </div>
+          <div class="feature-card">
+            <span class="tag">創業有計畫</span>
+            <h3>從課程走到團隊成形</h3>
+            <p>串接國內外創業資源與競賽補助，讓團隊更容易往實作前進。</p>
+          </div>
+        </div>
+        <div>
+          <div class="panel teal">
+            <h3 style="font-size: clamp(20px, 2vw, 28px);">北醫創新創業教育中心</h3>
+            <p class="strong-copy" style="margin-top:.6rem;">創造產學臨床鏈結，建立醫療創新價值。</p>
+          </div>
+          <div class="panel blue" style="margin-top:1rem;">
+            <h3>可帶進頁面的重點</h3>
+            <p style="margin-top:.6rem;">活動與競賽、進駐申請、輔導服務、空間與設備借用，都是合作與創業支援的入口。</p>
+            <div class="resource-strip">
+              <span class="pill">課程/工作坊/活動</span>
+              <span class="pill">進駐申請</span>
+              <span class="pill">輔導申請</span>
+              <span class="pill">空間/設備借用</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="team-grid">
+        <div class="team-card"><b>蕪菁</b><p>營養與健康陪跑主題，強調飲食與療癒式支持。</p></div>
+        <div class="team-card"><b>GDGoC TMU</b><p>校園 Google 開發者社群，串接技術交流與專案合作。</p></div>
+        <div class="team-card"><b>悅谷生活圈</b><p>以社區藥事照護與數位健康管理為核心。</p></div>
+        <div class="team-card"><b>呷上</b><p>AI 美食搜尋平台，結合外食需求與使用體驗。</p></div>
+        <div class="team-card"><b>GDG on Campus TMU</b><p>連結跨校技術學習與共同解題的學生社群。</p></div>
+        <div class="team-card"><b>牙起來印</b><p>牙科 3D 列印與數位建模應用，對接實務工具。</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="08 / 11">
+      <div class="brand-line"></div>
+      <h2 class="single-line-title no-break">數位自學中心</h2>
+      <p class="lead tight-lead" style="margin-top:1rem;">導入國際優質磨課師課程與開放教育資源，支援自主學習與全球共學。</p>
+      <div class="two-col-stack">
+        <div class="panel">
+          <h3 style="font-size: clamp(20px, 2vw, 28px);">學習特點</h3>
+          <p class="strong-copy" style="margin-top:.6rem;">學生可以依自己的節奏，透過數位資源累積專業與跨域知能。</p>
+          <div class="pill-list">
+            <span class="pill">MOOCs</span>
+            <span class="pill">自主學習</span>
+            <span class="pill">全球共學</span>
+            <span class="pill">彈性修課</span>
+          </div>
+        </div>
+        <div class="feature-grid" style="grid-template-columns:1fr; margin-top:0;">
+          <div class="feature-card">
+            <span class="tag">VR LAB</span>
+            <h3>用沉浸式技術體驗場景</h3>
+            <p>官方資源中提供 VR LAB 與數位自學資源，可補強臨場感與模擬式學習。</p>
+          </div>
+          <div class="feature-card">
+            <span class="tag">數位自學系統</span>
+            <h3>把學習進度變成可追蹤</h3>
+            <p>串接數位自學系統與跨域課程，讓學生可以用自己的節奏完成學習。</p>
+          </div>
+        </div>
+        <div class="panel" style="padding:.8rem;">
+          <img src="images/小杰.JPG" alt="小杰" class="big-photo">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="09 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">Program</div>
+          <h2 class="single-line-title no-break">智慧醫療跨領域學士學位學程</h2>
+          <p class="lead tight-lead" style="margin-top:1rem;">以人工智慧為導向，結合生醫知識與實際應用，提供面向 AI Healthcare 的完整學習路徑。</p>
+          <div class="pill-list">
+            <span class="pill">AI 領域</span>
+            <span class="pill">創新創業領域</span>
+            <span class="pill">新媒體領域</span>
+            <span class="pill">永續發展領域</span>
+          </div>
+          <div class="case-grid" style="grid-template-columns:1fr 1fr; margin-top:1rem;">
+            <div class="case-card">
+              <h4>現況挑戰 01</h4>
+              <p>懂醫療的不懂程式，臨床痛點無法有效轉化為運算問題。</p>
+            </div>
+            <div class="case-card">
+              <h4>現況挑戰 02</h4>
+              <p>懂程式的不懂醫療，工程師缺乏對生醫資料特性的理解。</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel red">
+          <h3 style="font-size: clamp(20px, 2vw, 28px);">學程特色</h3>
+          <p class="strong-copy" style="margin-top:.6rem;">從醫療需求、AI 技術到實務應用，建立完整的跨域學習鏈。</p>
+          <div class="info-grid" style="margin-top:1rem;">
+            <div class="info-card">
+              <h4>學程架構</h4>
+              <p>結合人工智慧學分學程、創新創業學分學程、新媒體學分學程與永續發展學分學程。</p>
+            </div>
+            <div class="info-card">
+              <h4>學習目標</h4>
+              <p>讓學生具備醫療與科技的雙重理解，並能把概念轉換成可落地的應用。</p>
+            </div>
+          </div>
+          <div class="info-card" style="margin-top:1rem;">
+            <h4>智慧醫療解方</h4>
+            <p>培育雙語人才、使用與微調 AI 工具、AI 協作解決臨床痛點，讓學生成為醫療與技術之間的橋樑。</p>
+          </div>
+        </div>
+      </div>
+      <div class="summary-grid" style="margin-top: -20rem !important; padding-bottom: 0rem;">
+        <div class="feature-card">
+          <span class="tag">智慧醫療解方 01</span>
+          <h3>培育雙語人才</h3>
+          <p>同時精通醫學術語與程式語言，打破跨域溝通障礙。</p>
+        </div>
+        <div class="feature-card">
+          <span class="tag">智慧醫療解方 02</span>
+          <h3>使用與微調 AI 工具</h3>
+          <p>不必鑽研底層演算法，也能讀懂並修改現成工具以符合臨床需求。</p>
+        </div>
+        <div class="feature-card">
+          <span class="tag">智慧醫療解方 03</span>
+          <h3>AI 協作解決痛點</h3>
+          <p>成為醫療與技術的橋樑，有效縮短流程並提升醫療品質。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="10 / 11">
+      <div class="brand-line"></div>
+      <div class="eyebrow">Highlights</div>
+      <h2 class="single-line-title no-break">學院亮點</h2>
+      <p class="lead tight-lead" style="margin-top:.8rem;">依官方亮點頁與學院首頁整理，聚焦跨域合作、課程整合與資源串接。</p>
+      <div class="summary-grid" style="margin-top:.65rem;">
+        <div class="feature-card">
+          <span class="tag">亮點 01</span>
+          <h3>跨域課程與微學程</h3>
+          <p>整合跨領域學習中心、課程與教師社群，讓不同專長能共同備課、共同學習。</p>
+        </div>
+        <div class="feature-card">
+          <span class="tag">亮點 02</span>
+          <h3>資源整合與共用</h3>
+          <p>把課程、場域、VR LAB 與數位自學資源整合起來，讓合作更容易啟動。</p>
+        </div>
+        <div class="feature-card">
+          <span class="tag">亮點 03</span>
+          <h3>跨域合作平台</h3>
+          <p>串接教學、活動與實作，強調教師、學生與外部單位一起參與。</p>
+        </div>
+      </div>
+      <div class="article-grid" style="margin-top:.75rem;">
+        <div class="article-card" style="min-height: 160px;">
+          <div class="date">重點 A</div>
+          <h3>學院不是單點單位，而是整合平台</h3>
+          <p>從教學、實作到資源，形成跨域合作入口。</p>
+        </div>
+        <div class="article-card" style="min-height: 160px;">
+          <div class="date">重點 B</div>
+          <h3>教師、學生與外部夥伴共同參與</h3>
+          <p>讓合作從課程開始，延伸到工作坊與專題。</p>
+        </div>
+        <div class="article-card" style="min-height: 160px;">
+          <div class="date">重點 C</div>
+          <h3>聚焦跨域合作與資源整合</h3>
+          <p>將學院亮點整理成可直接對外溝通的一頁內容。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-no="11 / 11">
+      <div class="brand-line"></div>
+      <div class="grid-2">
+        <div>
+          <div class="eyebrow">Next Conversation</div>
+          <h2 class="split-title"><span>讓醫療創新合作，</span><span>從一個清楚的入口開始</span></h2>
+          <p class="lead tight-lead" style="margin-top:1rem;">台北醫學大學跨領域學院歡迎外部單位以議題、課程、活動、資源或實作場域切入合作。</p>
+          <div class="kicker">cis@tmu.edu.tw ｜ (02)2736-1661 #3001 ｜ 臺北市信義區吳興街250號</div>
+          <div class="final-links">
+            <div class="final-link">
+              <h3>跨領域學院</h3>
+              <p>https://cis.tmu.edu.tw/</p>
+            </div>
+            <div class="final-link">
+              <h3>創新創業教育中心</h3>
+              <p>https://ieec.tmu.edu.tw/</p>
+            </div>
+            <div class="final-link">
+              <h3>數位自學與 VR LAB</h3>
+              <p>VR LAB、數位自學系統與開放資源可在此延伸。</p>
+            </div>
+            <div class="final-link">
+              <h3>智慧醫療學程</h3>
+              <p>以 AI 與生醫整合出發，連結跨域學習路徑。</p>
+            </div>
+          </div>
+        </div>
+        <div class="final-contact">
+          <h3>主要資料來源</h3>
+          <p>跨領域學院官方網站、學院簡介、各中心與學程頁面，以及校內公開網站與連結頁面。</p>
+          <div class="pill-list">
+            <span class="pill">cis.tmu.edu.tw</span>
+            <span class="pill">ieec.tmu.edu.tw</span>
+            <span class="pill">tmu.edu.tw</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="controls" aria-label="簡報控制">
+    <button type="button" id="prev" aria-label="上一頁">‹</button>
+    <div class="counter" id="counter">1 / 11</div>
+    <button type="button" id="next" aria-label="下一頁">›</button>
+  </nav>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const counter = document.getElementById('counter');
+    let index = 0;
+
+    function showSlide(nextIndex) {
+      index = (nextIndex + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      counter.textContent = `${index + 1} / ${slides.length}`;
+    }
+
+    document.getElementById('prev').addEventListener('click', () => showSlide(index - 1));
+    document.getElementById('next').addEventListener('click', () => showSlide(index + 1));
+    window.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') showSlide(index + 1);
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') showSlide(index - 1);
+    });
+
+    showSlide(0);
+  </script>
+</body>
+</html>
